@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fine Art & Prints | Portfolio</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <title>Anime & Pop Culture | Celestial Art Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Bump ?v= whenever you edit styles.css so browsers grab the new version -->
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
 
@@ -17,36 +18,55 @@
   <nav class="sticky-nav">
     <a href="index.html">home</a>
     <a href="about.html">about</a>
-    <a href="prints.html" class="active">prints</a>
-    <a href="anime.html">anime & pop</a>
+    <a href="prints.html">prints</a>
+    <a href="anime.html" class="active" aria-current="page">anime &amp; pop</a>
     <a href="design.html">design</a>
     <a href="sketchbook.html">sketchbook</a>
   </nav>
 
-  <!-- Page Content -->
   <main class="content-container">
-    <section class="portfolio-section">
-      <div class="section-header">
-        <h2>Fine Art & Archival Prints</h2>
-        <p>Original illustrations, gallery prints, and physical reproductions.</p>
-      </div>
 
+    <header class="page-intro">
+      <h1>Anime &amp; Pop Culture</h1>
+      <p>Fan art, merch designs, charms, and convention favorites.</p>
+    </header>
+
+    <section class="portfolio-section">
       <div class="art-grid">
         <article class="art-card">
           <div class="card-image-wrap">
-            <img src="print1.jpg" alt="Original Print" />
-            <span class="price-tag">8x10 / 11x17</span>
+            <img src="anime1.jpg" alt="Celestial Knight fan art" />
+            <span class="price-tag">Charm / Print</span>
           </div>
           <div class="card-info">
-            <h3>Starlight Echoes</h3>
-            <p>Giclée Archival Print</p>
+            <h3>Celestial Knight</h3>
+            <p>Acrylic Charm / Print</p>
           </div>
         </article>
-        <!-- Add more print cards here -->
+        <article class="art-card">
+          <div class="card-image-wrap">
+            <img src="anime2.jpg" alt="[Describe the piece]" />
+          </div>
+          <div class="card-info">
+            <h3>[Piece title]</h3>
+            <p>[Sticker / Print / Charm]</p>
+          </div>
+        </article>
+        <article class="art-card">
+          <div class="card-image-wrap">
+            <img src="anime3.jpg" alt="[Describe the piece]" />
+          </div>
+          <div class="card-info">
+            <h3>[Piece title]</h3>
+            <p>[Sticker / Print / Charm]</p>
+          </div>
+        </article>
+        <!-- Copy an .art-card to add more pieces -->
       </div>
     </section>
+
   </main>
 
-  <script src="starfield.js"></script>
+  <script src="starfield.js?v=3"></script>
 </body>
 </html>
