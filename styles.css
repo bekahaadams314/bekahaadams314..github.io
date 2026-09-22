@@ -1,0 +1,56 @@
+/* Full-screen preloader overlay */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(circle at 50% 50%, #2a2040 0%, #15102a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+}
+
+/* Smooth fade-out class added by JS */
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+/* Pulsing star animation */
+.celestial-spinner {
+  width: 60px;
+  height: 60px;
+  animation: pulse-rotate 2.5s infinite ease-in-out;
+  filter: drop-shadow(0 0 12px rgba(230, 202, 101, 0.5));
+}
+
+.loader-text {
+  color: #E6CA65;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  margin-top: 18px;
+  opacity: 0.85;
+  text-transform: lowercase;
+}
+
+@keyframes pulse-rotate {
+  0% {
+    transform: rotate(0deg) scale(0.85);
+    opacity: 0.5;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(0.85);
+    opacity: 0.5;
+  }
+}
