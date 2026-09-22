@@ -1,51 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Celestial Art Portfolio</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+<!-- Floating Quick-Nav Bar -->
+<nav class="sticky-nav">
+  <a href="#bio">about</a>
+  <a href="#prints">prints</a>
+  <a href="#anime-pop">anime & pop</a>
+  <a href="#graphic-design">design</a>
+  <a href="#sketchbook">sketchbook</a>
+</nav>
 
-  <!-- Preloader Overlay -->
-  <div id="preloader">
-    <div class="loader-content">
-      <svg class="celestial-spinner" viewBox="0 0 100 100">
-        <path d="M50 0 C50 35, 65 50, 100 50 C65 50, 50 65, 50 100 C50 65, 35 50, 0 50 C35 50, 50 35, 50 0 Z" fill="url(#gold-glow)"/>
-        <defs>
-          <linearGradient id="gold-glow" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#FFF8DC" />
-            <stop offset="100%" stop-color="#E6CA65" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <p class="loader-text">aligning the stars...</p>
+<!-- Main Portfolio Content -->
+<main class="content-container">
+
+  <!-- Bio & Intro Landing Section -->
+  <section id="bio" class="portfolio-section bio-card">
+    <div class="bio-avatar">
+      <img src="avatar-placeholder.jpg" alt="Artist Profile" />
     </div>
-  </div>
+    <div class="bio-text">
+      <h2>hello, i'm [your name]</h2>
+      <p class="bio-subtitle">illustrator • convention artist • graphic designer</p>
+      <p class="bio-body">
+        Welcome to my creative space! I specialize in original fine prints, pop culture illustration for artist alleys, and functional graphic design. Catch me at local art festivals or browse my work below.
+      </p>
+      <div class="bio-badges">
+        <span class="badge">🎨 Artist Alley Vendor</span>
+        <span class="badge">✨ Available for Hire</span>
+      </div>
+    </div>
+  </section>
 
-  <!-- Starfield Canvas Background -->
-  <canvas id="celestial-bg"></canvas>
+  <!-- Container 1: Prints (Art Festivals & Fine Art) -->
+  <section id="prints" class="portfolio-section">
+    <div class="section-header">
+      <h2>01 / Fine Art & Prints</h2>
+      <p>Original illustrations, gallery prints, and high-quality physical reproductions.</p>
+    </div>
+    <div class="art-grid">
+      <!-- Card Example -->
+      <article class="art-card">
+        <div class="card-image-wrap">
+          <img src="print1.jpg" alt="Original Print" />
+          <span class="price-tag">8x10 / 11x17</span>
+        </div>
+        <div class="card-info">
+          <h3>Starlight Echoes</h3>
+          <p>Giclée Archival Print</p>
+        </div>
+      </article>
+      <!-- Repeat .art-card as needed -->
+    </div>
+  </section>
 
-  <!-- Portfolio Content -->
-  <main class="content">
-    <header class="hero">
-      <h1>Celestial Gallery</h1>
-      <p class="subtitle">minimalist & dreamy portfolio</p>
-    </header>
+  <!-- Container 2: Pop Culture & Anime Art (Artist Alley Focus) -->
+  <section id="anime-pop" class="portfolio-section">
+    <div class="section-header">
+      <h2>02 / Anime & Pop Culture</h2>
+      <p>Fan art, merch designs, charms.</p>
+    </div>
+    <div class="art-grid">
+      <article class="art-card">
+        <div class="card-image-wrap">
+          <img src="anime1.jpg" alt="Fan Art" />
+        </div>
+        <div class="card-info">
+          <h3>Celestial Knight</h3>
+          <p>Acrylic Charm / Print</p>
+        </div>
+      </article>
+    </div>
+  </section>
 
-    <!-- Art Gallery Grid -->
-    <section class="gallery">
-      <!-- Add your art cards here -->
-    </section>
-  </main>
+  <!-- Container 3: Graphic Design (Client & Corporate Focus) -->
+  <section id="graphic-design" class="portfolio-section">
+    <div class="section-header">
+      <h2>03 / Graphic Design</h2>
+      <p>Branding and event posters.</p>
+    </div>
+    <div class="design-grid">
+      <!-- Design Case Study Card -->
+      <article class="design-card">
+        <img src="design-mockup.jpg" alt="Design Project" />
+        <div class="design-info">
+          <h3>Cosmic Tea Co. Branding</h3>
+          <p>Brand Identity • Packaging • Vector Logo</p>
+        </div>
+      </article>
+    </div>
+  </section>
 
-  <!-- JavaScript -->
-  <script src="starfield.js"></script>
-</body>
-</html>
+  <!-- Container 4: Sketchbook Work (Raw Process & Studies) -->
+  <section id="sketchbook" class="portfolio-section">
+    <div class="section-header">
+      <h2>04 / Sketchbook & Studies</h2>
+      <p>Raw ideas, line art, speed paints, and work-in-progress drafts.</p>
+    </div>
+    <div class="sketchbook-row">
+      <div class="sketch-item"><img src="sketch1.jpg" alt="Sketch 1" /></div>
+      <div class="sketch-item"><img src="sketch2.jpg" alt="Sketch 2" /></div>
+      <div class="sketch-item"><img src="sketch3.jpg" alt="Sketch 3" /></div>
+    </div>
+  </section>
+
+</main>
