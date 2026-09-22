@@ -1,9 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My GitHub Website</title>
-</head>
-<body>
-    <h1>Hello, world! Welcome to my site.</h1>
-</body>
-</html>
+<canvas id="celestial-bg"></canvas>
+
+<style>
+  #celestial-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 30%, #e0c3fc 0%, #8ec5fc 100%);
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById('celestial-bg');
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  const stars = Array.from({ length: 60 }, () => ({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    radius: Math.random() * 1.8 + 0.5,
+    alpha: Math.random(),
+    speed: Math.random() * 0.02 + 0.005,
+    color: Math.random() > 0.3 ? '#FFF8DC' : '#E6CA65'
+  }));
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    stars.forEach(star => {
+      star.alpha += star.speed;
+      if (star.alpha > 1 || star.alpha < 0) star.speed = -star.speed;
+
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fillStyle = star.color;
+      ctx.globalAlpha = Math.abs(star.alpha);
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = star.color;
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+</script>
