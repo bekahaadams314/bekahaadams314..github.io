@@ -1,4 +1,34 @@
-/* Full-screen preloader overlay */
+/* General resets & layout setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #2a2438;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Background canvas fixed positioning */
+#celestial-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 30%, #e0c3fc 0%, #8ec5fc 100%);
+  pointer-events: none;
+}
+
+/* Preloader full-screen overlay */
 #preloader {
   position: fixed;
   inset: 0;
@@ -11,7 +41,6 @@
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
 }
 
-/* Smooth fade-out class added by JS */
 #preloader.fade-out {
   opacity: 0;
   visibility: hidden;
@@ -22,7 +51,6 @@
   text-align: center;
 }
 
-/* Pulsing star animation */
 .celestial-spinner {
   width: 60px;
   height: 60px;
@@ -53,4 +81,24 @@
     transform: rotate(360deg) scale(0.85);
     opacity: 0.5;
   }
+}
+
+/* Portfolio Hero Section */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #1f1a2e;
+}
+
+.hero .subtitle {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  text-transform: lowercase;
 }
