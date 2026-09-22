@@ -1,4 +1,38 @@
-<!-- Floating Quick-Nav Bar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestial Art Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Preloader Overlay -->
+  <div id="preloader">
+    <div class="loader-content">
+      <svg class="celestial-spinner" viewBox="0 0 100 100">
+        <path d="M50 0 C50 35, 65 50, 100 50 C65 50, 50 65, 50 100 C50 65, 35 50, 0 50 C35 50, 50 35, 50 0 Z" fill="url(#gold-glow)"/>
+        <defs>
+          <linearGradient id="gold-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF8DC" />
+            <stop offset="100%" stop-color="#E6CA65" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <p class="loader-text">aligning the stars...</p>
+    </div>
+  </div>
+
+  <!-- Starfield Canvas Background -->
+  <canvas id="celestial-bg"></canvas>
+
+  <!-- Floating Quick-Nav Bar -->
 <nav class="sticky-nav">
   <a href="#bio">about</a>
   <a href="#prints">prints</a>
@@ -54,7 +88,7 @@
   <section id="anime-pop" class="portfolio-section">
     <div class="section-header">
       <h2>02 / Anime & Pop Culture</h2>
-      <p>Fan art, merch designs, charms.</p>
+      <p>Fan art, merch designs, charms, and convention favorites.</p>
     </div>
     <div class="art-grid">
       <article class="art-card">
@@ -73,7 +107,7 @@
   <section id="graphic-design" class="portfolio-section">
     <div class="section-header">
       <h2>03 / Graphic Design</h2>
-      <p>Branding and event posters.</p>
+      <p>Branding, typography, event posters, and layout systems.</p>
     </div>
     <div class="design-grid">
       <!-- Design Case Study Card -->
@@ -101,3 +135,8 @@
   </section>
 
 </main>
+
+  <!-- JavaScript -->
+  <script src="starfield.js"></script>
+</body>
+</html>
