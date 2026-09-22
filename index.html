@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Art Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestial Art Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <div class="logo">Artist Name</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+
+  <!-- Preloader Overlay -->
+  <div id="preloader">
+    <div class="loader-content">
+      <svg class="celestial-spinner" viewBox="0 0 100 100">
+        <path d="M50 0 C50 35, 65 50, 100 50 C65 50, 50 65, 50 100 C50 65, 35 50, 0 50 C35 50, 50 35, 50 0 Z" fill="url(#gold-glow)"/>
+        <defs>
+          <linearGradient id="gold-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF8DC" />
+            <stop offset="100%" stop-color="#E6CA65" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <p class="loader-text">aligning the stars...</p>
+    </div>
+  </div>
+
+  <!-- Starfield Canvas Background -->
+  <canvas id="celestial-bg"></canvas>
+
+  <!-- Portfolio Content -->
+  <main class="content">
+    <header class="hero">
+      <h1>Celestial Gallery</h1>
+      <p class="subtitle">minimalist & dreamy portfolio</p>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Visual Artist & Illustrator</h1>
-        <p>Welcome to my creative space.</p>
+    <!-- Art Gallery Grid -->
+    <section class="gallery">
+      <!-- Add your art cards here -->
     </section>
+  </main>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery-grid">
-        <div class="gallery-item">
-            <img src="images/artwork1.jpg" alt="Sample Artwork 1">
-        </div>
-        <div class="gallery-item">
-            <img src="images/artwork2.jpg" alt="Sample Artwork 2">
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Get in Touch</h2>
-        <p>Email: artist@example.com</p>
-    </section>
-
-    <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script src="starfield.js"></script>
 </body>
 </html>
