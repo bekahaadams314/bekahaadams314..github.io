@@ -1,80 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Art Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Art Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo">Artist Name</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Animated starfield canvas background -->
-  <canvas id="celestial-bg"></canvas>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Visual Artist & Illustrator</h1>
+        <p>Welcome to my creative space.</p>
+    </section>
 
-  <!-- Main portfolio Content -->
-  <main class="content">
-    <h1>Celestial Portfolio</h1>
-    <!-- Art gallery grid goes here -->
-  </main>
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-grid">
+        <div class="gallery-item">
+            <img src="images/artwork1.jpg" alt="Sample Artwork 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/artwork2.jpg" alt="Sample Artwork 2">
+        </div>
+    </section>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      color: #2a2438;
-    }
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-    }
-    #celestial-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      background: radial-gradient(circle at 50% 30%, #e0c3fc 0%, #8ec5fc 100%);
-      pointer-events: none;
-    }
-  </style>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>Email: artist@example.com</p>
+    </section>
 
-  <script>
-    const canvas = document.getElementById('celestial-bg');
-    const ctx = canvas.getContext('2d');
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
-
-    const stars = Array.from({ length: 60 }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      radius: Math.random() * 1.8 + 0.5,
-      alpha: Math.random(),
-      speed: Math.random() * 0.02 + 0.005,
-      color: Math.random() > 0.3 ? '#FFF8DC' : '#E6CA65'
-    }));
-
-    function animate() {
-      ctx.clearRect(0, 0, width, height);
-      stars.forEach(star => {
-        star.alpha += star.speed;
-        if (star.alpha > 1 || star.alpha < 0) star.speed = -star.speed;
-
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = star.color;
-        ctx.globalAlpha = Math.abs(star.alpha);
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = star.color;
-        ctx.fill();
-      });
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    window.addEventListener('resize', () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
