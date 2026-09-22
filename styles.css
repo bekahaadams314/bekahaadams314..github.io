@@ -351,3 +351,248 @@ html {
     font-size: 0.75rem;
   }
 }
+
+/* =========================================================
+   NEW (v3): multi-page additions
+   ========================================================= */
+
+/* "You are here" link in the nav */
+.sticky-nav a.active {
+  color: #b58d27;
+  border-bottom: 1px solid #E6CA65;
+  padding-bottom: 2px;
+}
+
+.sticky-nav a:focus-visible,
+.explore-card:focus-visible,
+.contact-button:focus-visible {
+  outline: 2px solid #b58d27;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Soft placeholder tone behind images that haven't been uploaded yet */
+.card-image-wrap,
+.sketch-item,
+.mockup-item,
+.explore-card img {
+  background: linear-gradient(135deg, rgba(201, 191, 230, 0.6), rgba(243, 230, 220, 0.6));
+}
+
+/* Sketchbook items need a height so their images show */
+.sketch-item {
+  aspect-ratio: 3 / 4;
+}
+
+/* ---------- Page intro (top of each inner page) ---------- */
+.page-intro {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.page-intro h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: #1f1a2e;
+  letter-spacing: 0.5px;
+}
+
+.page-intro p {
+  color: #5a5266;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Home: gallery "doors" ---------- */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.explore-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(180, 160, 220, 0.3);
+}
+
+.explore-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* ---------- About page ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.about-block h3 {
+  font-size: 1.4rem;
+  color: #1f1a2e;
+  margin-bottom: 0.6rem;
+}
+
+.about-block ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #3b334a;
+  line-height: 1.8;
+}
+
+.about-block li::marker {
+  color: #b58d27;
+}
+
+.about-block p {
+  color: #3b334a;
+  line-height: 1.6;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.55rem 1.3rem;
+  border-radius: 30px;
+  background: #1f1a2e;
+  color: #FFF8DC;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #3b334a;
+}
+
+/* ---------- Design page: case studies ---------- */
+.case-study-header {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1.75rem;
+}
+
+.project-category {
+  display: block;
+  font-size: 0.8rem;
+  color: #7b6894;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+}
+
+.case-study-meta h2 {
+  font-size: 2rem;
+  color: #1f1a2e;
+}
+
+.project-tagline {
+  color: #5a5266;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.case-study-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid rgba(230, 202, 101, 0.6);
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  color: #7b6894;
+}
+
+.detail-value {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #2a2438;
+}
+
+.case-study-body {
+  max-width: 65ch;
+  margin-bottom: 1.75rem;
+}
+
+.case-study-body h3 {
+  font-size: 1.35rem;
+  color: #1f1a2e;
+  margin-bottom: 0.4rem;
+}
+
+.case-study-body p {
+  color: #3b334a;
+  line-height: 1.7;
+}
+
+.mockup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.mockup-item {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  aspect-ratio: 4 / 3;
+}
+
+.mockup-item.large {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 8;
+}
+
+.mockup-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Mobile tweaks for the new pieces ---------- */
+@media (max-width: 768px) {
+  .sticky-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 0.8rem;
+    border-radius: 20px;
+  }
+  .content-container {
+    margin-top: 8.5rem; /* room for the nav when it wraps to two lines */
+  }
+  .portfolio-section {
+    padding: 1.5rem;
+  }
+  .about-grid,
+  .case-study-header,
+  .mockup-grid {
+    grid-template-columns: 1fr;
+  }
+  .case-study-details {
+    padding-left: 0;
+    padding-top: 1rem;
+    border-left: none;
+    border-top: 1px solid rgba(230, 202, 101, 0.6);
+  }
+  .mockup-item.large {
+    aspect-ratio: 4 / 3;
+  }
+}
