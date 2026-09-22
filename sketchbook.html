@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sketchbook | Celestial Art Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Bump ?v= whenever you edit styles.css so browsers grab the new version -->
+  <link rel="stylesheet" href="styles.css?v=3" />
+</head>
+<body>
+
+  <!-- Starfield Canvas -->
+  <canvas id="celestial-bg"></canvas>
+
+  <!-- Navigation -->
+  <nav class="sticky-nav">
+    <a href="index.html">home</a>
+    <a href="about.html">about</a>
+    <a href="prints.html">prints</a>
+    <a href="anime.html">anime &amp; pop</a>
+    <a href="design.html">design</a>
+    <a href="sketchbook.html" class="active" aria-current="page">sketchbook</a>
+  </nav>
+
+  <main class="content-container">
+
+    <header class="page-intro">
+      <h1>Sketchbook &amp; Studies</h1>
+      <p>Raw ideas, line art, speed paints, and work-in-progress drafts.</p>
+    </header>
+
+    <section class="portfolio-section">
+      <div class="section-header">
+        <h2>Recent pages</h2>
+        <p>Scroll sideways to flip through.</p>
+      </div>
+      <div class="sketchbook-row">
+        <div class="sketch-item"><img src="sketch1.jpg" alt="Sketch 1" /></div>
+        <div class="sketch-item"><img src="sketch2.jpg" alt="Sketch 2" /></div>
+        <div class="sketch-item"><img src="sketch3.jpg" alt="Sketch 3" /></div>
+        <div class="sketch-item"><img src="sketch4.jpg" alt="Sketch 4" /></div>
+        <div class="sketch-item"><img src="sketch5.jpg" alt="Sketch 5" /></div>
+      </div>
+    </section>
+
+    <section class="portfolio-section">
+      <div class="section-header">
+        <h2>Studies</h2>
+        <p>Anatomy, color, and lighting practice.</p>
+      </div>
+      <div class="art-grid">
+        <article class="art-card">
+          <div class="card-image-wrap">
+            <img src="study1.jpg" alt="[Describe the study]" />
+          </div>
+          <div class="card-info">
+            <h3>[Study title]</h3>
+            <p>[Medium, e.g. graphite / digital]</p>
+          </div>
+        </article>
+        <article class="art-card">
+          <div class="card-image-wrap">
+            <img src="study2.jpg" alt="[Describe the study]" />
+          </div>
+          <div class="card-info">
+            <h3>[Study title]</h3>
+            <p>[Medium]</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="starfield.js?v=3"></script>
+</body>
+</html>
