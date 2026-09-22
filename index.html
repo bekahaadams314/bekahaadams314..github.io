@@ -3,49 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Celestial Art Portfolio</title>
-  
-  <!-- Google Fonts -->
+  <title>Art Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Preloader Overlay -->
-  <div id="preloader">
-    <div class="loader-content">
-      <svg class="celestial-spinner" viewBox="0 0 100 100">
-        <path d="M50 0 C50 35, 65 50, 100 50 C65 50, 50 65, 50 100 C50 65, 35 50, 0 50 C35 50, 50 35, 50 0 Z" fill="url(#gold-glow)"/>
-        <defs>
-          <linearGradient id="gold-glow" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#FFF8DC" />
-            <stop offset="100%" stop-color="#E6CA65" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <p class="loader-text">aligning the stars...</p>
-    </div>
-  </div>
-
-  <!-- Starfield Canvas Background -->
+  <!-- Animated starfield canvas background -->
   <canvas id="celestial-bg"></canvas>
 
-  <!-- Portfolio Content -->
+  <!-- Main portfolio Content -->
   <main class="content">
-    <header class="hero">
-      <h1>Celestial Gallery</h1>
-      <p class="subtitle">minimalist & dreamy portfolio</p>
-    </header>
-
-    <!-- Art Gallery Grid -->
-    <section class="gallery">
-      <!-- Add your art cards here -->
-    </section>
+    <h1>Celestial Portfolio</h1>
+    <!-- Art gallery grid goes here -->
   </main>
 
-  <!-- JavaScript -->
-  <script src="starfield.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #2a2438;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    #celestial-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: radial-gradient(circle at 50% 30%, #e0c3fc 0%, #8ec5fc 100%);
+      pointer-events: none;
+    }
+  </style>
+
+  <script>
+    const canvas = document.getElementById('celestial-bg');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const stars = Array.from({ length: 60 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 1.8 + 0.5,
+      alpha: Math.random(),
+      speed: Math.random() * 0.02 + 0.005,
+      color: Math.random() > 0.3 ? '#FFF8DC' : '#E6CA65'
+    }));
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      stars.forEach(star => {
+        star.alpha += star.speed;
+        if (star.alpha > 1 || star.alpha < 0) star.speed = -star.speed;
+
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = star.color;
+        ctx.globalAlpha = Math.abs(star.alpha);
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = star.color;
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
 </html>
