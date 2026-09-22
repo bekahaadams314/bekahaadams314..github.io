@@ -8,10 +8,26 @@
 </head>
 <body>
 
+  <!-- Celestial Preloader Overlay -->
+<div id="preloader">
+  <div class="loader-content">
+    <svg class="celestial-spinner" viewBox="0 0 100 100">
+      <path d="M50 0 C50 35, 65 50, 100 50 C65 50, 50 65, 50 100 C50 65, 35 50, 0 50 C35 50, 50 35, 50 0 Z" fill="url(#gold-glow)"/>
+      <defs>
+        <linearGradient id="gold-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FFF8DC" />
+          <stop offset="100%" stop-color="#E6CA65" />
+        </linearGradient>
+      </defs>
+    </svg>
+    <p class="loader-text">aligning the stars...</p>
+  </div>
+</div>
+
   <!-- Animated starfield canvas background -->
   <canvas id="celestial-bg"></canvas>
 
-  <!-- Main portfolio Content -->
+  <!-- Portfolio Content -->
   <main class="content">
     <h1>Celestial Portfolio</h1>
     <!-- Art gallery grid goes here -->
